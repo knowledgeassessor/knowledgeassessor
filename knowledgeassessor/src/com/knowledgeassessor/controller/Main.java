@@ -3,8 +3,8 @@ package com.knowledgeassessor.controller;
 import java.util.Iterator;
 import java.util.List;
 
-import com.knowledgeassessor.persistence.*;
-import com.knowledgeassessor.persistence.exam;
+import com.knowledgeassessor.hibernate.*;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -25,10 +25,10 @@ public class Main {
 		try{
 			transaction = session.beginTransaction();
 			@SuppressWarnings("rawtypes")
-			List exams = session.createQuery("from exam").list();
+			List exams = session.createQuery("from Exam").list();
 			for(@SuppressWarnings("rawtypes")
 			Iterator it = exams.iterator(); it.hasNext();){
-				exam xam = (exam) it.next();
+				Exam xam = (Exam) it.next();
 				System.out.println("Exam ID = " + xam.getId());
 			}
 		

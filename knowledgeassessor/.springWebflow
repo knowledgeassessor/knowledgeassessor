@@ -4,8 +4,8 @@
 	<pluginVersion><![CDATA[3.0.0.201208090952-RELEASE]]></pluginVersion>
 	<configs>
 		<config>
-			<file>servlet.xml</file>
-			<name><![CDATA[servlet]]></name>
+			<file>WebContent/WEB-INF/tes.xml</file>
+			<name><![CDATA[tes]]></name>
 		</config>
 	</configs>
 </webflow-project-description>
