@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.knowledgeassessor.hibernate.Exam;
 import com.knowledgeassessor.hibernate.Questions;
 import com.knowledgeassessor.hibernate.QuestionsDAO;
 
@@ -22,9 +23,9 @@ public class QuestionsServiceImpl implements QuestionsService{
 	}
 
 	@Transactional
-	public List<Questions> listQuestions() {
+	public List<Questions> listQuestionsForExam(Exam id) {
 		
-		return questionsDAO.listQuestions();
+		return questionsDAO.listQuestionsForExam(id);
 	}
 
 	@Transactional

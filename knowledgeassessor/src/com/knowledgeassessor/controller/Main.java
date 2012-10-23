@@ -26,10 +26,20 @@ public class Main {
 			transaction = session.beginTransaction();
 			@SuppressWarnings("rawtypes")
 			List exams = session.createQuery("from Exam").list();
+			
 			for(@SuppressWarnings("rawtypes")
-			Iterator it = exams.iterator(); it.hasNext();){
-				Exam xam = (Exam) it.next();
-				System.out.println("Exam ID = " + xam.getId());
+			Iterator ite = exams.iterator(); ite.hasNext();){
+				Exam xam = (Exam) ite.next();
+				//System.out.println("Exam ID = " + xam.getId());
+			}
+			
+			List questions = session.createQuery("from Questions where examId = '1' ").list();
+			for(@SuppressWarnings("rawtypes")
+			Iterator itq = questions.iterator(); itq.hasNext();){
+				Questions q = (Questions) itq.next();
+				System.out.println("Questin id = " + q.getId());
+				System.out.println("Questin  = " + q.getQuestion());
+				System.out.println("Questin choice = " + q.getChoiceOne());
 			}
 		
 		}catch(HibernateException e){

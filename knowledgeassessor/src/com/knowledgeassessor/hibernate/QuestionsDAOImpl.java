@@ -24,17 +24,18 @@ public class QuestionsDAOImpl implements QuestionsDAO{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public List<Questions> listQuestions() {
+	public List<Questions> listQuestionsForExam(Exam id) {
 		
-		return sessionFactory.getCurrentSession().createQuery("from Questions").list();
+		return sessionFactory.getCurrentSession().createQuery("from Questions where examId = " + id ).list();
 	}
 
 	@Override
 	public void removeQuestion(Integer id) {
-		Questions questions = (Questions) sessionFactory.getCurrentSession().load(Questions.class, id);
-		if(null != questions){
-			sessionFactory.getCurrentSession().delete(questions);
+		Questions question = (Questions) sessionFactory.getCurrentSession().load(Questions.class, id);
+		if(null != question){
+			sessionFactory.getCurrentSession().delete(question);
 		}
 		
 	}
