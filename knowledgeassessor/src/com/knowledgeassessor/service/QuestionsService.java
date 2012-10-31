@@ -7,7 +7,7 @@ import com.knowledgeassessor.hibernate.Questions;
 
 public interface QuestionsService {
 
-	public void addQuestion(Questions questions);
-	public List<Questions> listQuestionsForExam(Exam id);
-	public void removeQuestion(Integer id);
+	//public void addQuestion(Questions questions);
+	public List<Questions> listQuestionsForExam(Integer id);
+	//public void removeQuestion(Integer id);
 }

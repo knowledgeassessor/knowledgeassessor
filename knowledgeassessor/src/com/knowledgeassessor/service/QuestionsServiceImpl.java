@@ -15,24 +15,26 @@ public class QuestionsServiceImpl implements QuestionsService{
 
 	@Autowired
 	private QuestionsDAO questionsDAO;
-	
+	/*
 	@Transactional
 	public void addQuestion(Questions questions) {
 		
 		questionsDAO.addQuestion(questions);
 	}
+	*/
 
 	@Transactional
-	public List<Questions> listQuestionsForExam(Exam id) {
+	public List<Questions> listQuestionsForExam(Integer id) {
 		
 		return questionsDAO.listQuestionsForExam(id);
 	}
-
+/*
 	@Transactional
 	public void removeQuestion(Integer id) {
 		questionsDAO.removeQuestion(id);
 		
 	}
+	*/
 
 
 
